@@ -19,17 +19,17 @@
 }
 
 body {
-  margin: 0; /* Elimina espacio exterior por defecto */
-  font-family: var(--fuente-texto); /* Usa la fuente que definiste en :root */
-  background-color: var(--color-fondo-principal); /* Fondo claro general */
-  color: var(--color-textos); /* Color por defecto para los textos */
+  margin: 40px; 
+  font-family: var(--fuente-texto); 
+  background-color: var(--color-fondo-principal);
+  color: var(--color-textos); 
   overflow-x: hidden;
 }
 
 
 /* Contenedor lateral (perfil + nav) */
 aside {
-  background-color: var(--color-menu); /* Fondo del menú */
+  background-color: var(--color-menu); 
   width: 220px;
   height: 100vh;
   position: fixed;
@@ -41,8 +41,6 @@ aside {
   padding-top: 30px;
 }
 
-
-
 .perfil img {
   width: 120px;
   height: 120px;
@@ -53,8 +51,17 @@ aside {
   display: block;
 }
 
+.perfil img {
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
 
-/* Título oculto (por accesibilidad) */
+.perfil img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Título oculto */
 h1 {
   position: absolute;
   left: -9999px;
@@ -87,23 +94,25 @@ aside ul li a:hover {
 
 /* Contenido principal a la derecha del menú */
 main {
-  margin-left: 260px; /* Espacio a la izquierda para aside */
+  margin-left: 260px; 
   padding: 40px;
-  max-width: calc(100% - 280px); /* Aprovecha el resto del espacio */
+  max-width: calc(100% - 280px); 
 }
+
 
 /* --- Sección: Sobre mí --- */
 #sobre-mi {
   max-width: 800px;
   margin: 0 auto;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 #sobre-mi h2 {
   font-size: var(--tamaño-titulos);
   font-family: var(--fuente-titulos);
   color: var(--color-titulos);
-  margin-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -112,20 +121,20 @@ main {
   line-height: 1.6;
   color: var(--color-textos);
   text-align: justify;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /* --- Sección: Habilidades --- */
-#habilidades {
-  padding: 0;
-  text-align: center;
-}
 
 #habilidades h2 {
   font-size: var(--tamaño-titulos);
   font-family: var(--fuente-titulos);
   color: var(--color-titulos);
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+  text-align: center;
 }
+
 
 .contenedor-iconos {
   display: flex;
@@ -146,7 +155,7 @@ main {
 
 /* --- Sección: Proyectos --- */
 #proyectos {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 60px 40px;
 }
@@ -155,7 +164,7 @@ main {
   font-size: var(--tamaño-titulos);
   font-family: var(--fuente-titulos);
   color: var(--color-titulos);
-  margin-bottom: 40px;
+  margin-bottom: 70px;
   text-align: center;
 }
 
@@ -203,7 +212,7 @@ main {
   margin-top: 10px;
 }
 
-/* Aplica a íconos e imágenes por igual */
+
 .proyecto .tecnologias img,
 .proyecto .tecnologias i {
   width: 40px;
@@ -215,7 +224,7 @@ main {
   padding: 0;
 }
 
-/* Estilo uniforme para el botón */
+
 .proyecto .tecnologias a {
   display: inline-flex;
   align-items: center;
@@ -240,12 +249,12 @@ main {
 
 /* --- Sección: Pasatiempos --- */
 #pasatiempos {
-  padding: 40px;
-}
+  padding-top: 20px;
+  padding-bottom: 40px;}
 
 #pasatiempos h2 {
   font-size: var(--tamaño-titulos);
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   color: var(--color-titulos);
   text-align: center;
 }
@@ -282,3 +291,131 @@ main {
   font-weight: 600;
   color: var(--color-menu);
 }
+
+/* --- Sección: Contacto --- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--fuente-texto);
+  color: var(--color-textos);
+}
+
+.label {
+  font-weight: bold;
+  font-family: var(--fuente-texto);
+  margin-top: 8px;
+}
+
+.formulario-contacto {
+  max-width: 600px;       
+  margin: 0 auto;         
+  padding: 0px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+#contactame h2 {
+  font-size: var(--tamaño-titulos);
+  margin-bottom: 40px;
+  color: var(--color-titulos);
+  text-align: center;
+}
+
+main,
+footer {
+  margin-left: 260px; 
+  padding: 0px;
+}
+
+input,
+textarea {
+  
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    color: var(--color-textos);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--color-menu); 
+  color: var(--color-texto-menu);     
+  cursor: pointer;
+  font-family: var(--fuente-texto);
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3c1e4f; 
+}
+
+.contenedor-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: var(--color-fondo-principal);
+}
+
+.formulario-contacto {
+  max-width: 700px;
+  width: 100%;
+  padding: 40px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+  .formulario-contacto form input,
+.formulario-contacto form textarea {
+  border: 1.5px solid #d1c2d1;
+}
+
+
+  @media screen and (max-width: 768px) {
+    .formulario-contacto {
+      padding: 20px;
+      max-width: 90%;
+    }
+  }
+
+.redes-contacto {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; 
+  gap: 20px;
+}
+
+.redes-contacto a {
+  font-size: 28px;
+  color: var(--color-titulos); 
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.redes-contacto a:hover {
+  transform: scale(1.2);
+  color: var(--color-menu); }
+
+  .seccion {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
