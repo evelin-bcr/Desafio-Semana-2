@@ -1,0 +1,284 @@
+@import url('https://fonts.cdnfonts.com/css/raleway-5');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+:root {
+  --fuente-titulos: 'Raleway', sans-serif;
+  --fuente-texto: 'Poppins', sans-serif;
+  --color-menu: #2B1036;
+  --color-texto-menu: #FFFFFF;
+  --color-fondo-principal: #FCECF7;
+  --color-titulos: #2B1036;
+  --color-textos: #000000;
+  --tamaño-titulos: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Elimina espacio exterior por defecto */
+  font-family: var(--fuente-texto); /* Usa la fuente que definiste en :root */
+  background-color: var(--color-fondo-principal); /* Fondo claro general */
+  color: var(--color-textos); /* Color por defecto para los textos */
+  overflow-x: hidden;
+}
+
+
+/* Contenedor lateral (perfil + nav) */
+aside {
+  background-color: var(--color-menu); /* Fondo del menú */
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+
+
+.perfil img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  background-color: white;
+  display: block;
+}
+
+
+/* Título oculto (por accesibilidad) */
+h1 {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Lista de enlaces del menú */
+aside ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Enlaces del menú */
+aside ul li a {
+  text-decoration: none;
+  color: var(--color-texto-menu);
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+aside ul li a:hover {
+  transform: scale(1.1);
+}
+
+/* Contenido principal a la derecha del menú */
+main {
+  margin-left: 260px; /* Espacio a la izquierda para aside */
+  padding: 40px;
+  max-width: calc(100% - 280px); /* Aprovecha el resto del espacio */
+}
+
+/* --- Sección: Sobre mí --- */
+#sobre-mi {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+#sobre-mi h2 {
+  font-size: var(--tamaño-titulos);
+  font-family: var(--fuente-titulos);
+  color: var(--color-titulos);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#sobre-mi p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-textos);
+  text-align: justify;
+}
+
+/* --- Sección: Habilidades --- */
+#habilidades {
+  padding: 0;
+  text-align: center;
+}
+
+#habilidades h2 {
+  font-size: var(--tamaño-titulos);
+  font-family: var(--fuente-titulos);
+  color: var(--color-titulos);
+  margin-bottom: 40px;
+}
+
+.contenedor-iconos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contenedor-iconos img {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease;
+}
+
+.contenedor-iconos img:hover {
+  transform: scale(1.1);
+}
+
+/* --- Sección: Proyectos --- */
+#proyectos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+#proyectos h2 {
+  font-size: var(--tamaño-titulos);
+  font-family: var(--fuente-titulos);
+  color: var(--color-titulos);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#proyectos .proyecto {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#proyectos .proyecto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: var(--color-titulos);
+}
+
+.proyecto img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.proyecto p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.proyecto .tecnologias {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Aplica a íconos e imágenes por igual */
+.proyecto .tecnologias img,
+.proyecto .tecnologias i {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo uniforme para el botón */
+.proyecto .tecnologias a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 20px;
+  background-color: var(--color-menu);
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 1;
+  vertical-align: middle;
+  transition: background-color 0.3s ease;
+}
+
+
+.proyecto .tecnologias a:hover {
+  background-color: #411454;
+}
+
+/* --- Sección: Pasatiempos --- */
+#pasatiempos {
+  padding: 40px;
+}
+
+#pasatiempos h2 {
+  font-size: var(--tamaño-titulos);
+  margin-bottom: 40px;
+  color: var(--color-titulos);
+  text-align: center;
+}
+
+.grid-pasatiempos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+.pasa {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.3s ease;
+}
+
+.pasa:hover {
+  transform: scale(1.05);
+}
+
+.pasa i {
+  font-size: 40px;
+  color: var(--color-menu);
+  margin-bottom: 10px;
+  display: block;
+}
+
+
+.pasa p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-menu);
+}
